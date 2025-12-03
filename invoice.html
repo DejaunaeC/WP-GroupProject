@@ -1,0 +1,53 @@
+ <section id="invoice" class="page-section">
+            <div class="invoice-container">
+                <div class="invoice-header">
+                    <h2>INVOICE</h2>
+                    <p style="color: var(--gray); margin-top: 0.5rem;">Scented Luxe - Lattafa Women's Fragrances</p>
+                </div>
+                <div class="invoice-details">
+                    <div class="invoice-section">
+                        <h3>Invoice Details</h3>
+                        <p><strong>Invoice Number:</strong> <span id="invoiceNumber">INV-001</span></p>
+                        <p><strong>Date:</strong> <span id="invoiceDate"></span></p>
+                        <p><strong>Payment Status:</strong> <span style="color: green;">Paid</span></p>
+                    </div>
+                    <div class="invoice-section">
+                        <h3>Customer Information</h3>
+                        <p id="customerInfo"></p>
+                    </div>
+                </div>
+                <table class="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoiceItems"></tbody>
+                </table>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="invoiceSubtotal">JMD $0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Discount (10%):</span>
+                        <span id="invoiceDiscount">-JMD $0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (15% GCT):</span>
+                        <span id="invoiceTax">JMD $0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total Amount:</span>
+                        <span id="invoiceTotal">JMD $0.00</span>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn" onclick="window.print()">Print Invoice</button>
+                    <button class="btn btn-secondary" onclick="showPage('home')" style="margin-left: 1rem;">Return Home</button>
+                </div>
+            </div>
+        </section>
