@@ -9,7 +9,7 @@
 
 Dejaunae Clue- 2304199 - Product/Cart  
 Shania Foster - 2404262 -   
-Jadon Fearon - 2405548 -   
+Jadon Fearon - 2405548 - Login/Password
 Nathan-Neil Shelly - 2408989  
 
 ---
