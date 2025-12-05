@@ -96,14 +96,20 @@ function renderInvoice() {
 
 	// Generate table rows for each item in the order
 	if (invoiceItems && Array.isArray(order.items)) {
-		invoiceItems.innerHTML = order.items.map(item => `
+		invoiceItems.innerHTML = order.items.map(item => {
+			const itemTotal = item.price * item.quantity;
+			const itemDiscount = itemTotal * 0.10;
+			const itemSubtotal = itemTotal - itemDiscount;
+			return `
 			<tr>
 				<td>${item.name}</td>
 				<td>${item.quantity}</td>
 				<td>${formatCurrency(item.price)}</td>
-				<td>${formatCurrency(item.price * item.quantity)}</td>
+				<td>${formatCurrency(itemDiscount)}</td>
+				<td>${formatCurrency(itemSubtotal)}</td>
 			</tr>
-		`).join("");
+		`;
+		}).join("");
 	}
 
 	// Retrieve total calculation elements
