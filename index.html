@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Login</title>
-</head>
-<body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h2>Login</h2>
 
-<h2>Login</h2>
+    <form id="loginForm">
+      <label>TRN</label>
+      <input type="text" id="loginTrn" required placeholder="000-000-000" />
 
-<form id="loginForm">
+      <br /><br />
 
-    <label>TRN</label>
-    <input type="text" id="loginTrn" required placeholder="000-000-000">
+      <label>Password</label>
+      <input type="password" id="loginPassword" required />
 
-    <br><br>
+      <br /><br />
 
-    <label>Password</label>
-    <input type="password" id="loginPassword" required>
+      <button type="submit"  class="btn" style="width: 100%;">Login</button>
+      <button type="reset"  class="btn" style="width: 100%;">Cancel</button>
 
-    <br><br>
-
-    <button type="submit">Login</button>
-    <button type="reset">Cancel</button>
-
-    <p>
+      <p>
         <a href="reset.html">Reset Password</a>
-    </p>
+      </p>
+    </form>
 
-</form>
-
-<script src="../js/login.js"></script>
-</body>
+    <script src="../js/login.js"></script>
+  </body>
 </html>

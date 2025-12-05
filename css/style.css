@@ -237,3 +237,65 @@ textarea:focus {
 		text-align: center;
 	}
 }
+
+
+
+
+form {
+	max-width: 420px;
+	margin: 3rem auto;
+	background: var(--white);
+	padding: 2rem;
+	border-radius: 16px;
+	box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+	border: 1px solid var(--border);
+}
+
+/* Headings centered */
+h2 {
+	text-align: center;
+	margin-bottom: 1.5rem;
+	color: var(--dark-gray);
+}
+
+/* Inputs full width */
+form input {
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+/* Buttons full width */
+form button {
+	width: 100%;
+	margin-top: 0.75rem;
+}
+
+/* Cancel button styling */
+form button[type="reset"] {
+	background: var(--light-gray);
+	color: var(--dark-gray);
+	border: 1px solid var(--border);
+}
+
+/* Links */
+form a,
+p a {
+	display: block;
+	text-align: center;
+	margin-top: 1rem;
+	color: var(--rose-gold);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+form a:hover,
+p a:hover {
+	text-decoration: underline;
+}
+
+
+
+p {
+	text-align: center;
+	color: var(--gray);
+}
