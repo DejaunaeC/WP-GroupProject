@@ -1,6 +1,6 @@
 // Storage key constants for managing cart and order data in localStorage
 const STORAGE_KEYS = {
-	cart: "cartItems",
+	cart: "cart",
 	latestOrder: "latestOrder",
 	orderHistory: "orderHistory"
 };

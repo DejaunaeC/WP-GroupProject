@@ -1,14 +1,38 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Scented Luxe</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-<section id="checkout" class="page-section">
-  <h2
-    style="
-      margin-bottom: 2rem;
-      text-align: center;
-      color: var(--dark-gray);
-      font-weight: 300;
-      letter-spacing: 2px;
-    "
-  >
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">✦</span>
+                <div>
+                    <h1>SCENTED LUXE</h1>
+                    <p class="tagline">A Luxury Experience in Every Bottle</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li>
+                        <a href="cart.html" class="nav-link cart-link active">
+                            Cart
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                    </li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     CHECKOUT
   </h2>
   <div class="checkout-container">
@@ -58,9 +82,7 @@
           </select>
         </div>
 
-        <h3 style="margin: 2rem 0 1.5rem 0; color: var(--rose-gold)">
-          Payment Information
-        </h3>
+        <h3>Payment Information</h3>
 
         <div class="form-group">
           <label for="cardName">Name on Card</label>
@@ -117,10 +139,18 @@
       </form>
     </div>
     <div class="checkout-summary">
-      <h3 style="margin-bottom: 1.5rem; color: var(--rose-gold)">
         Order Summary
       </h3>
       <div id="checkoutSummary"></div>
     </div>
   </div>
 </section>
+<footer>
+        <p>&copy; 2025 Scented Luxe. All rights reserved.</p>
+        <p class="footer-gold">Lattafa Women's Fragrances</p>
+    </footer>
+
+    <script src="js/help.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

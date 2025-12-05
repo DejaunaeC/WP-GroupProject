@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("registerForm");
 
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // prevent default submit so we can validate
+     form.addEventListener("submit", function (event) {
+        event.preventDefault();
     
         // Collect form data
         const firstName = document.getElementById("firstName").value.trim();
@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // -------------------------------------------
         // 2. Password length check
         // -------------------------------------------
-        if (password.length < 8) {
-            alert("Password must be at least 8 characters long.");
-            return;
-        }
+        //if (password.length < 8) {
+           // alert("Password must be at least 8 characters long.");
+           // return;
+       // }
     
         if (password !== confirmPassword) {
             alert("Passwords do not match.");
@@ -54,24 +54,24 @@ document.addEventListener("DOMContentLoaded", () => {
         // -------------------------------------------
         // 4. TRN Format Validation (000-000-000)
         // -------------------------------------------
-        const trnPattern = /^\d{3}-\d{3}-\d{3}$/;
+        //const trnPattern = /^\d{3}-\d{3}-\d{3}$/;
     
-        if (!trnPattern.test(trn)) {
-            alert("TRN must be in the format 000-000-000.");
-            return;
-        }
+       // if (!trnPattern.test(trn)) {
+           // alert("TRN must be in the format 000-000-000.");
+           // return;
+        //}
     
         // -------------------------------------------
         // 5. TRN must be unique (Check localStorage)
         // -------------------------------------------
         let registrationData = JSON.parse(localStorage.getItem("RegistrationData")) || [];
     
-        const trnExists = registrationData.some(user => user.trn === trn);
+        //const trnExists = registrationData.some(user => user.trn === trn);
     
-        if (trnExists) {
-            alert("This TRN already exists. Please use a unique TRN.");
-            return;
-        }
+        //if (trnExists) {
+           // alert("This TRN already exists. Please use a unique TRN.");
+           // return;
+       // }
     
         // -------------------------------------------
         // 6. Store registration info as an object
