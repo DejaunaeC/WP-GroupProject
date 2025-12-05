@@ -393,7 +393,7 @@ function showProductModal(product) {
                 '<span class="review-author">' + review.author + '</span>' +
                 '<span class="review-date">' + review.date + '</span>' +
             '</div>' +
-            '<div class="product-rating" style="justify-content: flex-start;">' +
+            '<div class="product-rating product-rating-start">' +
                 '<span class="stars">' + reviewStars + '</span>' +
             '</div>' +
             '<p class="review-text">' + review.text + '</p>';

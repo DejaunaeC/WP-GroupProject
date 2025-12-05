@@ -1094,6 +1094,15 @@ input[readonly] {
     margin-bottom: 0.5rem;
 }
 
+.invoice-subtitle {
+    color: var(--gray);
+    margin-top: 0.5rem;
+}
+
+.status-paid {
+    color: var(--success-color);
+}
+
 .invoice-details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1453,4 +1462,207 @@ display: none;
 body {
     background: white;
 }
+}
+
+/* ============================================================================
+   MODAL STYLES
+   ============================================================================ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: var(--background);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--dark-grey);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--dark-grey);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.invoice-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--light-blue-bg);
+}
+
+.invoice-item:hover {
+    box-shadow: 0 4px 12px rgba(123, 179, 219, 0.2);
+    transform: translateY(-2px);
+}
+
+.invoice-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.invoice-item-info {
+    flex: 1;
+}
+
+.invoice-item-info strong {
+    color: var(--dark-grey);
+}
+
+.invoice-item-meta {
+    margin: 0.25rem 0 0 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.invoice-item-total {
+    text-align: right;
+}
+
+.invoice-item-total p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--baby-blue);
+}
+
+.modal-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* ============================================================================
+   UTILITY SECTION STYLES
+   ============================================================================ */
+
+.section-title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-container {
+    margin-top: 3rem;
+}
+
+.section-heading {
+    margin-bottom: 1.5rem;
+}
+
+.charts-container {
+    margin-top: 2rem;
+}
+
+/* ============================================================================
+   CART STYLES
+   ============================================================================ */
+
+.cart-heading {
+    margin-bottom: 2rem;
+    color: var(--dark-gray);
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.cart-actions {
+    max-width: 450px;
+    margin: 2rem auto 0;
+}
+
+/* ============================================================================
+   INVOICE BUTTON STYLES
+   ============================================================================ */
+
+.invoice-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.invoice-actions .btn-secondary {
+    margin-left: 1rem;
+}
+
+/* ============================================================================
+   REGISTER FORM STYLES
+   ============================================================================ */
+
+.register-button {
+    width: 100%;
+}
+
+.register-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.register-footer a {
+    color: var(--rose-gold);
+}
+
+/* ============================================================================
+   CHECKOUT STYLES (Extended)
+   ============================================================================ */
+
+.checkout-section-title {
+    margin-bottom: 1.5rem;
+    color: var(--rose-gold);
+}
+
+/* ============================================================================
+   PRODUCT MODAL STYLES
+   ============================================================================ */
+
+.product-reviews-label {
+    margin-left: 0.5rem;
+    color: var(--gray);
+}
+
+.product-add-button {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.product-rating-start {
+    justify-content: flex-start;
 }

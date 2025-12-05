@@ -35,7 +35,7 @@
             <div class="invoice-container">
                 <div class="invoice-header">
                     <h2>INVOICE</h2>
-                    <p style="color: var(--gray); margin-top: 0.5rem;">Scentral - Lattafa Fragrances</p>
+                    <p class="invoice-subtitle">Scentral - Lattafa Fragrances</p>
                 </div>
                 
                 <div class="invoice-details">
@@ -44,7 +44,7 @@
                         <p><strong>Invoice Number:</strong> <span id="invoiceNumber">INV-001</span></p>
                         <p><strong>Date:</strong> <span id="invoiceDate"></span></p>
                         <p><strong>TRN:</strong> <span id="invoiceTrn"></span></p>
-                        <p><strong>Payment Status:</strong> <span style="color: green;">Paid</span></p>
+                        <p><strong>Payment Status:</strong> <span class="status-paid">Paid</span></p>
                     </div>
                     
                     <div class="invoice-section">
@@ -85,9 +85,9 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center; margin-top: 2rem;">
+                <div class="invoice-actions">
                     <button class="btn" onclick="window.print()">Print Invoice</button>
-                    <button class="btn btn-secondary" onclick="returnHome()" style="margin-left: 1rem;">Return to Products</button>
+                    <button class="btn btn-secondary" onclick="returnHome()">Return to Products</button>
                 </div>
             </div>
         </div>

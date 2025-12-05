@@ -117,29 +117,84 @@ function displayFrequencyCharts(genderCount, ageGroups) {
     container.innerHTML = html;
 }
 
-// Question 7b: ShowInvoices() - Display all invoices in console
+// Question 7b: ShowInvoices() - Display all invoices in a modal overlay
 function showInvoices() {
     // Get all invoices from order history
     const invoices = JSON.parse(localStorage.getItem('orderHistory')) || [];
     
     if (invoices.length === 0) {
-        console.log('No invoices found.');
         alert('No invoices found in the system.');
         return;
     }
     
-    // Display all invoices in console
-    console.log('=== ALL INVOICES ===');
+    // Create modal overlay
+    let modalHTML = `
+        <div id="invoiceModal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>All Invoices</h3>
+                    <button class="modal-close" onclick="closeInvoiceModal()">&times;</button>
+                </div>
+                
+                <div class="modal-body">
+    `;
+    
+    // Add each invoice as a clickable item
     invoices.forEach((invoice, index) => {
-        console.log('\nInvoice #' + (index + 1) + ':');
-        console.log('ID:', invoice.id);
-        console.log('Date:', new Date(invoice.createdAt).toLocaleString());
-        console.log('Customer:', invoice.customer?.name || 'N/A');
-        console.log('Total:', 'JMD $' + (invoice.totals?.total?.toFixed(2) || '0.00'));
-        console.log('Items:', invoice.items);
+        const total = invoice.totals?.total || 0;
+        const date = new Date(invoice.createdAt).toLocaleDateString();
+        const customer = invoice.customer?.name || 'N/A';
+        
+        modalHTML += `
+            <div class="invoice-item" onclick="viewInvoice('${invoice.id}'); closeInvoiceModal();">
+                <div class="invoice-item-content">
+                    <div class="invoice-item-info">
+                        <strong>Invoice #${invoice.id}</strong>
+                        <p class="invoice-item-meta">${date} | ${customer}</p>
+                    </div>
+                    <div class="invoice-item-total">
+                        <p>JMD $${total.toFixed(2)}</p>
+                    </div>
+                </div>
+            </div>
+        `;
     });
     
-    alert('Found ' + invoices.length + ' invoice(s). Check console for details.');
+    modalHTML += `
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" onclick="closeInvoiceModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Insert modal into page
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+}
+
+// Close invoice modal
+function closeInvoiceModal() {
+    const modal = document.getElementById('invoiceModal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+// View a specific invoice
+function viewInvoice(invoiceId) {
+    // Get all invoices and find the one with matching ID
+    const invoices = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    const invoice = invoices.find(inv => inv.id === invoiceId);
+    
+    if (invoice) {
+        // Store as latest order to view
+        localStorage.setItem('latestOrder', JSON.stringify(invoice));
+        // Navigate to invoice page
+        window.location.href = 'invoice.html';
+    } else {
+        alert('Invoice not found.');
+    }
 }
 
 // Question 7c: GetUserInvoices() - Get invoices for current logged-in user
