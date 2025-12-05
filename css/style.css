@@ -1,0 +1,239 @@
+:root {
+	/* Project palette (README) */
+	--primary-color: #c07c74;
+	--secondary-color: #2f2f2f;
+	--accent-color: #f3c7bc;
+	--text-dark: #333333;
+	--text-light: #666666;
+	--background: #ffffff;
+	--border-color: #dddddd;
+	--error-color: #dc3545;
+	--success-color: #28a745;
+	--light-gray: rgba(243, 199, 188, 0.08); /* accent wash */
+
+	/* Convenience aliases used in components */
+	--rose-gold: var(--primary-color);
+	--dark-gray: var(--secondary-color);
+	--gray: var(--text-light);
+	--border: var(--border-color);
+	--white: var(--background);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Segoe UI", sans-serif;
+	background: linear-gradient(135deg, var(--background), rgba(192, 124, 116, 0.12));
+	color: var(--dark-gray);
+}
+
+.page-section {
+	padding: 3rem 1.5rem;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+h2 {
+	letter-spacing: 2px;
+}
+
+.btn {
+	background: var(--rose-gold);
+	color: var(--white);
+	border: none;
+	padding: 0.85rem 1.4rem;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.btn:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 10px 18px rgba(47, 47, 47, 0.12);
+}
+
+.btn-secondary {
+	background: var(--light-gray);
+	color: var(--dark-gray);
+	border: 1px solid var(--border);
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin-bottom: 1rem;
+}
+
+label {
+	font-size: 0.95rem;
+	color: var(--gray);
+}
+
+input,
+select,
+textarea {
+	padding: 0.75rem;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	font-size: 1rem;
+	background: var(--white);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 2px solid rgba(192, 124, 116, 0.35);
+	border-color: var(--rose-gold);
+}
+
+.button-group {
+	display: flex;
+	gap: 0.75rem;
+	margin-top: 1rem;
+}
+
+/* Checkout */
+.checkout-container {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 1.5rem;
+}
+
+.checkout-form,
+.checkout-summary {
+	background: var(--white);
+	border-radius: 14px;
+	padding: 1.5rem;
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+	border: 1px solid var(--border);
+}
+
+.summary-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-bottom: 1rem;
+}
+
+.summary-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.65rem 0.75rem;
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	background: var(--light-gray);
+}
+
+.item-name {
+	margin: 0;
+	font-weight: 600;
+}
+
+.item-meta {
+	margin: 0.25rem 0 0 0;
+	color: var(--gray);
+	font-size: 0.9rem;
+}
+
+.item-total {
+	margin: 0;
+	font-weight: 700;
+}
+
+.summary-row {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.35rem 0;
+	color: var(--gray);
+}
+
+.summary-row.total {
+	font-weight: 700;
+	color: var(--dark-gray);
+	border-top: 1px solid var(--border);
+	padding-top: 0.6rem;
+}
+
+/* Invoice */
+.invoice-container {
+	background: var(--white);
+	border-radius: 16px;
+	padding: 2rem;
+	box-shadow: 0 24px 50px rgba(0, 0, 0, 0.07);
+	border: 1px solid var(--border);
+}
+
+.invoice-header {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin-bottom: 1.25rem;
+}
+
+.invoice-details {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.invoice-section {
+	background: var(--light-gray);
+	padding: 1rem;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+}
+
+.invoice-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1rem 0 1.5rem 0;
+}
+
+.invoice-table th,
+.invoice-table td {
+	padding: 0.85rem;
+	text-align: left;
+	border-bottom: 1px solid var(--border);
+}
+
+.invoice-table th {
+	background: var(--light-gray);
+	color: var(--dark-gray);
+	font-weight: 700;
+}
+
+.invoice-table tr:last-child td {
+	border-bottom: none;
+}
+
+.cart-summary {
+	max-width: 360px;
+	margin-left: auto;
+	background: var(--light-gray);
+	padding: 1rem;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+	.checkout-container {
+		grid-template-columns: 1fr;
+	}
+
+	.button-group {
+		flex-direction: column;
+	}
+
+	.button-group .btn,
+	.button-group .btn-secondary {
+		width: 100%;
+		text-align: center;
+	}
+}
