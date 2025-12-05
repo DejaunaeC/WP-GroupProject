@@ -1,3 +1,10 @@
+/* ============================================================================
+ * Member: Nathan-Neil Shelly - Member 3 (invoice, checkout and analytics)
+ * Student ID: 2408989
+ * Class: Friday/12PM
+ * ============================================================================
+*/
+
 // Storage key constants for managing order data in localStorage
 const STORAGE_KEYS = {
 	latestOrder: "latestOrder",
@@ -131,3 +138,4 @@ document.addEventListener("DOMContentLoaded", renderInvoice);
 function returnHome() {
     window.location.href = 'products.html';
 }
+
