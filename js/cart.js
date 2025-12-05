@@ -7,6 +7,8 @@
 
 // Question 4a: Create a shopping cart page that lists items
 // Display cart with name, price, quantity, sub-total, discount, tax, and total
+
+function displayCart() {
     var cartItems = document.getElementById('cartItems');
     var cartSummary = document.getElementById('cartSummary');
     
@@ -39,39 +41,50 @@
         cartItemDiv.className = 'cart-item';
         cartItemDiv.innerHTML = 
             '<div class="cart-item-image">' +
-                '<img src="' + item.image + '" alt="' + item.name + '">' +
+                '<img src="' + item.image + '" alt="' + item.name + '" onerror="this.src=\'assets/placeholder.png\'">' +
             '</div>' +
-            '<div>' +
+            '<div class="cart-item-details">' +
                 '<h4>' + item.name + '</h4>' +
-                '<p>' + item.brand + ' - ' + item.size + '</p>' +
+                '<p class="cart-item-brand">' + item.brand + ' - ' + item.size + '</p>' +
             '</div>' +
-            '<div>JMD $' + item.price.toLocaleString() + '</div>' +
+            '<div class="cart-item-price">JMD $' + item.price.toLocaleString() + '</div>' +
             '<div class="quantity-control">' +
-                '<button onclick="updateQuantity(' + item.cartId + ', -1)">-</button>' +
-                '<input type="number" value="' + item.quantity + '" readonly>' +
-                '<button onclick="updateQuantity(' + item.cartId + ', 1)">+</button>' +
+                '<button onclick="updateQuantity(' + item.cartId + ', -1)" aria-label="Decrease quantity">−</button>' +
+                '<input type="number" value="' + item.quantity + '" readonly aria-label="Quantity">' +
+                '<button onclick="updateQuantity(' + item.cartId + ', 1)" aria-label="Increase quantity">+</button>' +
             '</div>' +
-            '<div>JMD $' + itemSubtotal.toLocaleString() + '</div>' +
-            '<button class="delete-btn" onclick="removeFromCart(' + item.cartId + ')">✕</button>';
+            '<div class="cart-item-subtotal">JMD $' + itemSubtotal.toLocaleString() + '</div>' +
+            '<button class="delete-btn" onclick="removeFromCart(' + item.cartId + ')" aria-label="Remove item">×</button>';
         
         cartItems.appendChild(cartItemDiv);
     }
     
     // Question 4c: Calculate and display total price
     var discount = subtotal * 0.10;
-    var tax = (subtotal - discount) * 0.15;
-    var total = subtotal - discount + tax;
+    var taxableAmount = subtotal - discount;
+    var tax = taxableAmount * 0.15;
+    var total = taxableAmount + tax;
     
     cartSummary.innerHTML = 
-        '<div class="summary-row"><span>Subtotal:</span><span>JMD $' + subtotal.toLocaleString() + '</span></div>' +
-        '<div class="summary-row"><span>Discount (10%):</span><span>-JMD $' + discount.toLocaleString() + '</span></div>' +
-        '<div class="summary-row"><span>Tax (15% GCT):</span><span>JMD $' + tax.toLocaleString() + '</span></div>' +
-        '<div class="summary-row total"><span>Total:</span><span>JMD $' + total.toLocaleString() + '</span></div>';
-
-
+        '<div class="summary-row">' +
+            '<span>Subtotal:</span>' +
+            '<span>JMD $' + subtotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</span>' +
+        '</div>' +
+        '<div class="summary-row">' +
+            '<span>Discount (10%):</span>' +
+            '<span class="discount-amount">-JMD $' + discount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</span>' +
+        '</div>' +
+        '<div class="summary-row">' +
+            '<span>Tax (15% GCT):</span>' +
+            '<span>JMD $' + tax.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</span>' +
+        '</div>' +
+        '<div class="summary-row total">' +
+            '<span>Total:</span>' +
+            '<span>JMD $' + total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</span>' +
+        '</div>';
+}
 
 /* Allow users to update quantities */
-
 function updateQuantity(cartId, change) {
     var cart = getFromLocalStorage('cart') || [];
     
@@ -79,6 +92,7 @@ function updateQuantity(cartId, change) {
         if (cart[i].cartId === cartId) {
             cart[i].quantity += change;
             
+            // Remove item if quantity becomes 0 or negative
             if (cart[i].quantity <= 0) {
                 removeFromCart(cartId);
                 return;
@@ -92,10 +106,12 @@ function updateQuantity(cartId, change) {
     }
 }
 
-
 /* Question 4b: Allow users to remove items from cart */
-
 function removeFromCart(cartId) {
+    if (!confirm('Remove this item from cart?')) {
+        return;
+    }
+    
     var cart = getFromLocalStorage('cart') || [];
     var newCart = [];
     
@@ -110,8 +126,7 @@ function removeFromCart(cartId) {
     updateCartBadge();
 }
 
-
-/*  Remove all items from shopping cart */
+/* Remove all items from shopping cart */
 function clearCart() {
     if (confirm('Are you sure you want to clear your entire cart?')) {
         saveToLocalStorage('cart', []);
@@ -120,9 +135,7 @@ function clearCart() {
     }
 }
 
-
-//Check Out button
-
+// Check Out button
 function proceedToCheckout() {
     var cart = getFromLocalStorage('cart') || [];
     

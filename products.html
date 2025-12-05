@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Scented Luxe</title>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-
+    <!-- Header with Navigation -->
     <header>
         <div class="header-content">
             <div class="logo">
@@ -36,69 +35,62 @@
     </header>
 
     <main>
-
+        <!-- Hero Section -->
         <div class="hero">
-            <h2>LATTAFA COLLECTION</h2>
-            <p>Premium women's fragrances from Lattafa</p>
+            <h2>LATTAFA WOMEN'S FRAGRANCES</h2>
+            <p>Discover luxury in every bottle</p>
         </div>
 
-        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--dark-gray); font-weight: 300; letter-spacing: 2px;">
-            OUR COLLECTION
-        </h2>
-        
+        <!-- Product Grid -->
         <div class="product-grid" id="productGrid">
+            <!-- Products will be loaded here by JavaScript -->
         </div>
     </main>
 
-    <div id="productModal" class="modal">
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 style="color: var(--rose-gold); margin: 0;">Product Details</h2>
+                <h2 id="modalProductName">Product Name</h2>
                 <button class="modal-close" onclick="closeModal()">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="product-detail-grid">
-                    <div>
-                        <div class="product-detail-image" id="modalProductImage">
-                            <img src="" alt="" id="modalProductImg">
-                        </div>
+                    <div class="product-detail-image">
+                        <img id="modalProductImg" src="" alt="">
                     </div>
                     <div class="product-detail-info">
-                        <h2 id="modalProductName">Product Name</h2>
-                        <p class="product-detail-brand" id="modalProductBrand">Lattafa</p>
+                        <p class="product-detail-brand" id="modalProductBrand">Brand</p>
                         <div class="product-detail-rating">
                             <span class="stars" id="modalProductStars">★★★★★</span>
-                            <span class="rating-count" id="modalProductRating">(4.8)</span>
-                            <span class="rating-count" id="modalProductReviews">156 reviews</span>
+                            <span class="rating-count" id="modalProductRating">(5.0)</span>
+                            <span style="margin-left: 0.5rem; color: var(--gray);" id="modalProductReviews">0 reviews</span>
                         </div>
-                        <div class="product-detail-price" id="modalProductPrice">JMD $0.00</div>
-                        
-                        <div class="product-description">
-                            <h4>Description:</h4>
-                            <p id="modalProductDescription">Product description will appear here.</p>
-                        </div>
-
-                        <button class="btn" onclick="addToCart()" style="width: 100%; margin-top: 1rem;">
+                        <div class="product-detail-price" id="modalProductPrice">JMD $0</div>
+                        <p class="product-description" id="modalProductDescription"></p>
+                        <button class="btn" onclick="addToCart()" style="width: 100%; margin-top: 1.5rem;">
                             Add to Cart
                         </button>
+                        
+                        <!-- Customer Reviews Section -->
+                        <div class="reviews-section">
+                            <h3>Customer Reviews</h3>
+                            <div id="reviewsContainer">
+                                <!-- Reviews will be loaded here -->
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="reviews-section">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--dark-gray);">Customer Reviews</h3>
-                    <div id="reviewsContainer"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Scented Luxe. All rights reserved.</p>
         <p class="footer-gold">Lattafa Women's Fragrances</p>
     </footer>
 
-    <script src="js/common.js"></script>
+    <script src="js/help.js"></script>
     <script src="js/products.js"></script>
 </body>
 </html>

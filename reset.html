@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Reset Password</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Locked - Scented Luxe</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <!-- Logo/Header -->
+        <div class="auth-header">
+            <span class="logo-icon">✦</span>
+            <h1>SCENTED LUXE</h1>
+            <p class="tagline">A Luxury Experience in Every Bottle</p>
+        </div>
 
-  
-  </head>
+        <!-- Locked Account Message -->
+        <div class="auth-form-container">
+            <div class="locked-message">
+                <div class="locked-icon">🔒</div>
+                <h2>Account Locked</h2>
+                <p class="auth-subtitle">Your account has been temporarily locked due to too many failed login attempts.</p>
+                
+                <div class="locked-info">
+                    <h3>What can you do?</h3>
+                    <ul>
+                        <li>Wait a few minutes and try again</li>
+                        <li>Reset your password if you've forgotten it</li>
+                        <li>Contact support if you need assistance</li>
+                    </ul>
+                </div>
 
-  <body>
-    <h2>Reset Password</h2>
+                <div class="form-actions">
+                    <a href="reset.html" class="btn btn-primary">Reset Password</a>
+                    <a href="index.html" class="btn btn-secondary">Return to Login</a>
+                </div>
+            </div>
+        </div>
 
-    <form id="resetForm">
-      <label>Enter Your TRN</label>
-      <input type="text" id="resetTrn" required placeholder="000-000-000" />
-
-      <br /><br />
-
-      <label>New Password</label>
-      <input type="password" id="newPass" required />
-
-      <br /><br />
-
-      <button type="submit"  class="btn" style="width: 100%;">Reset Password</button>
-    </form>
-
-    <script src="../js/reset.js"></script>
-  </body>
+        <!-- Footer -->
+        <div class="auth-footer">
+            <p>&copy; 2025 Scented Luxe. All rights reserved.</p>
+        </div>
+    </div>
+</body>
 </html>

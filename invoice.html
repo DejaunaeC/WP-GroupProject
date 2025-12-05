@@ -1,32 +1,72 @@
- <section id="invoice" class="page-section">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Scented Luxe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">✦</span>
+                <div>
+                    <h1>SCENTED LUXE</h1>
+                    <p class="tagline">A Luxury Experience in Every Bottle</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="cart.html" class="nav-link cart-link">
+                        Cart
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-section">
             <div class="invoice-container">
                 <div class="invoice-header">
                     <h2>INVOICE</h2>
                     <p style="color: var(--gray); margin-top: 0.5rem;">Scented Luxe - Lattafa Women's Fragrances</p>
                 </div>
+                
                 <div class="invoice-details">
                     <div class="invoice-section">
                         <h3>Invoice Details</h3>
                         <p><strong>Invoice Number:</strong> <span id="invoiceNumber">INV-001</span></p>
                         <p><strong>Date:</strong> <span id="invoiceDate"></span></p>
+                        <p><strong>TRN:</strong> <span id="invoiceTrn"></span></p>
                         <p><strong>Payment Status:</strong> <span style="color: green;">Paid</span></p>
                     </div>
+                    
                     <div class="invoice-section">
                         <h3>Customer Information</h3>
-                        <p id="customerInfo"></p>
+                        <div id="customerInfo"></div>
                     </div>
                 </div>
+                
                 <table class="invoice-table">
                     <thead>
                         <tr>
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Price</th>
+                            <th>Discount</th>
                             <th>Subtotal</th>
                         </tr>
                     </thead>
                     <tbody id="invoiceItems"></tbody>
                 </table>
+                
                 <div class="cart-summary">
                     <div class="summary-row">
                         <span>Subtotal:</span>
@@ -45,9 +85,21 @@
                         <span id="invoiceTotal">JMD $0.00</span>
                     </div>
                 </div>
+                
                 <div style="text-align: center; margin-top: 2rem;">
                     <button class="btn" onclick="window.print()">Print Invoice</button>
-                    <button class="btn btn-secondary" onclick="showPage('home')" style="margin-left: 1rem;">Return Home</button>
+                    <button class="btn btn-secondary" onclick="returnHome()" style="margin-left: 1rem;">Return to Products</button>
                 </div>
             </div>
-        </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Scented Luxe. All rights reserved.</p>
+        <p class="footer-gold">Lattafa Women's Fragrances</p>
+    </footer>
+
+    <script src="js/help.js"></script>
+    <script src="js/invoice.js"></script>
+</body>
+</html>

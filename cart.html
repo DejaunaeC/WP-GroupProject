@@ -1,11 +1,70 @@
-<section id="cart" class="page-section">
-            <div class="cart-container">
-                <h2 style="margin-bottom: 2rem; color: var(--dark-gray); font-weight: 300; letter-spacing: 2px;">SHOPPING CART</h2>
-                <div id="cartItems"></div>
-                <div class="cart-summary" id="cartSummary"></div>
-                <div class="button-group">
-                    <button class="btn btn-secondary" onclick="clearCart()">Clear All</button>
-                    <button class="btn" onclick="showPage('checkout')">Proceed to Checkout</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Scented Luxe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">✦</span>
+                <div>
+                    <h1>SCENTED LUXE</h1>
+                    <p class="tagline">A Luxury Experience in Every Bottle</p>
                 </div>
             </div>
-        </section>
+            <nav>
+                <ul>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li>
+                        <a href="cart.html" class="nav-link cart-link active">
+                            Cart
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                    </li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Cart Container -->
+        <div class="cart-container">
+            <h2 style="margin-bottom: 2rem; color: var(--dark-gray); font-weight: 300; letter-spacing: 2px; text-align: center;">
+                YOUR SHOPPING CART
+            </h2>
+            
+            <!-- Cart Items (dynamically populated) -->
+            <div id="cartItems">
+                <!-- Cart items will be loaded here by cart.js -->
+            </div>
+
+            <!-- Cart Summary (totals) -->
+            <div class="cart-summary" id="cartSummary">
+                <!-- Summary will be calculated and displayed here by cart.js -->
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group" style="max-width: 450px; margin: 2rem auto 0;">
+                <button class="btn btn-secondary" onclick="clearCart()">Clear All</button>
+                <button class="btn btn-primary" onclick="proceedToCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Scented Luxe. All rights reserved.</p>
+        <p class="footer-gold">Lattafa Women's Fragrances</p>
+    </footer>
+
+    <script src="js/help.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

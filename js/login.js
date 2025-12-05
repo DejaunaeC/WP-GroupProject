@@ -14,7 +14,7 @@ function loginUser(e){
 
     if(validUser){
         alert("Login Successful!");
-        window.location.href = "dashboard.html"; // Redirect to dashboard
+        window.location.href = "products.html"; // Redirect to dashboard
     } 
     else {
         attempts--;

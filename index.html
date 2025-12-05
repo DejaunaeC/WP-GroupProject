@@ -1,36 +1,75 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <h2>Login</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Scented Luxe</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <!-- Logo/Header -->
+        <div class="auth-header">
+            <span class="logo-icon">✦</span>
+            <h1>SCENTED LUXE</h1>
+            <p class="tagline">A Luxury Experience in Every Bottle</p>
+        </div>
 
-    <form id="loginForm">
-      <label>TRN</label>
-      <input type="text" id="loginTrn" required placeholder="000-000-000" />
+        <!-- Login Form -->
+        <div class="auth-form-container">
+            <h2>Welcome Back</h2>
+            <p class="auth-subtitle">Sign in to continue shopping</p>
 
-      <br /><br />
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginTrn">Tax Registration Number (TRN)</label>
+                    <input 
+                        type="text" 
+                        id="loginTrn" 
+                        name="trn"
+                        placeholder="000-000-000" 
+                        pattern="\d{3}-\d{3}-\d{3}"
+                        required 
+                        autocomplete="username"
+                    >
+                    <small class="form-hint">Format: 123-456-789</small>
+                </div>
 
-      <label>Password</label>
-      <input type="password" id="loginPassword" required />
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input 
+                        type="password" 
+                        id="loginPassword" 
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
 
-      <br /><br />
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="reset" class="btn btn-secondary">Clear</button>
+                </div>
 
-      <button type="submit"  class="btn" style="width: 100%;">Login</button>
-      <button type="reset"  class="btn" style="width: 100%;">Cancel</button>
+                <div class="auth-links">
+                    <a href="reset.html" class="auth-link">Forgot Password?</a>
+                    <p class="auth-redirect">
+                        Don't have an account? 
+                        <a href="register.html" class="auth-link-primary">Register here</a>
+                    </p>
+                </div>
+            </form>
+        </div>
 
-      <p>
-        <a href="reset.html">Reset Password</a>
-        <p>Don't have an account? <a href="register.html">Register here</a></p>
-      </p>
-    </form>
+        <!-- Footer -->
+        <div class="auth-footer">
+            <p>&copy; 2025 Scented Luxe. All rights reserved.</p>
+        </div>
+    </div>
 
-    <script src="../js/login.js"></script>
-  </body>
+    <script src="js/help.js"></script>
+    <script src="js/login.js"></script>
+</body>
 </html>
 

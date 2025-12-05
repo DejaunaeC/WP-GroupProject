@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Scented Luxe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">✦</span>
+                <div>
+                    <h1>SCENTED LUXE</h1>
+                    <p class="tagline">A Luxury Experience in Every Bottle</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="cart.html" class="nav-link cart-link">
+                        Cart
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a></li>
+                    <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                    <li><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-section">
+            <h2 style="margin-bottom: 2rem; text-align: center;">ANALYTICS DASHBOARD</h2>
+            
+            <!-- Analytics Cards -->
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>Total Sales</h3>
+                    <p class="analytics-value" id="analyticsTotalSales">JMD $0.00</p>
+                </div>
+                <div class="analytics-card">
+                    <h3>Total Orders</h3>
+                    <p class="analytics-value" id="analyticsOrderCount">0</p>
+                </div>
+                <div class="analytics-card">
+                    <h3>Average Order</h3>
+                    <p class="analytics-value" id="analyticsAvgOrder">JMD $0.00</p>
+                </div>
+                <div class="analytics-card">
+                    <h3>Top Product</h3>
+                    <p class="analytics-value" id="analyticsTopProduct">N/A</p>
+                </div>
+            </div>
+
+            <!-- User Frequency Section -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem;">User Statistics</h3>
+                <button class="btn" onclick="showUserFrequency()">Show User Frequency</button>
+                <div id="frequencyCharts" style="margin-top: 2rem;"></div>
+            </div>
+
+            <!-- Invoice Search Section -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem;">Invoice Management</h3>
+                <div class="button-group">
+                    <button class="btn" onclick="showInvoices()">Show All Invoices</button>
+                    <button class="btn btn-secondary" onclick="getUserInvoices()">Get My Invoices</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Scented Luxe. All rights reserved.</p>
+        <p class="footer-gold">Lattafa Women's Fragrances</p>
+    </footer>
+
+    <script src="js/help.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

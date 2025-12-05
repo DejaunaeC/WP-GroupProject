@@ -121,3 +121,7 @@ function renderInvoice() {
 
 // Render the invoice when the page has finished loading
 document.addEventListener("DOMContentLoaded", renderInvoice);
+
+function returnHome() {
+    window.location.href = 'products.html';
+}
