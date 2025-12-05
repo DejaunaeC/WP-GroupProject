@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Scented Luxe</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">✦</span>
+                <div>
+                    <h1>SCENTED LUXE</h1>
+                    <p class="tagline">A Luxury Experience in Every Bottle</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="products.html" class="nav-link active">Products</a></li>
+                    <li>
+                        <a href="cart.html" class="nav-link cart-link">
+                            Cart
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                    </li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="hero">
+            <h2>LATTAFA COLLECTION</h2>
+            <p>Premium women's fragrances from Lattafa</p>
+        </div>
+
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--dark-gray); font-weight: 300; letter-spacing: 2px;">
+            OUR COLLECTION
+        </h2>
+        
+        <div class="product-grid" id="productGrid">
+        </div>
+    </main>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 style="color: var(--rose-gold); margin: 0;">Product Details</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="product-detail-grid">
+                    <div>
+                        <div class="product-detail-image" id="modalProductImage">
+                            <img src="" alt="" id="modalProductImg">
+                        </div>
+                    </div>
+                    <div class="product-detail-info">
+                        <h2 id="modalProductName">Product Name</h2>
+                        <p class="product-detail-brand" id="modalProductBrand">Lattafa</p>
+                        <div class="product-detail-rating">
+                            <span class="stars" id="modalProductStars">★★★★★</span>
+                            <span class="rating-count" id="modalProductRating">(4.8)</span>
+                            <span class="rating-count" id="modalProductReviews">156 reviews</span>
+                        </div>
+                        <div class="product-detail-price" id="modalProductPrice">JMD $0.00</div>
+                        
+                        <div class="product-description">
+                            <h4>Description:</h4>
+                            <p id="modalProductDescription">Product description will appear here.</p>
+                        </div>
+
+                        <button class="btn" onclick="addToCart()" style="width: 100%; margin-top: 1rem;">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="reviews-section">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--dark-gray);">Customer Reviews</h3>
+                    <div id="reviewsContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Scented Luxe. All rights reserved.</p>
+        <p class="footer-gold">Lattafa Women's Fragrances</p>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

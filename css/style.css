@@ -1,3 +1,14 @@
+/**
+ * ============================================================================
+ * STYLE.CSS - Main Stylesheet
+ * ============================================================================
+ * Project: Scented Luxe - E-Commerce Website
+ 
+ * This stylesheet contains all styling for the e-commerce website.
+ * Organized by section for easy navigation.
+ * ============================================================================
+ */
+
 :root {
 	/* Project palette (README) */
 	--primary-color: #c07c74;

@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("RegistrationData", JSON.stringify(registrationData));
     
         alert("Registration successful!");
-        form.reset();
+        location = 'products.html';
     });
     
     // -------------------------------------------

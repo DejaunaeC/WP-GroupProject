@@ -24,4 +24,4 @@ function loginUser(e){
             window.location.href = "locked.html"; // Redirect to locked page
         }
     }
-}
+} 
