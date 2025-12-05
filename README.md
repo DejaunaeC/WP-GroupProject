@@ -42,13 +42,13 @@ CompanyName_Mon9am/
 │   └── 📁 docs/           (Optional - documentation files)
 │
 ├── 📄 index.html          (LOGIN PAGE - Member 2)
-├── 📄 register.html       (REGISTRATION PAGE - Member 1)
+├── 📄 register.html       (REGISTRATION PAGE - Member 2)
 ├── 📄 products.html       (PRODUCT CATALOG - Member 3)
 ├── 📄 cart.html           (SHOPPING CART - Member 3)
 ├── 📄 checkout.html       (CHECKOUT - Member 4)
 ├── 📄 invoice.html        (INVOICE DISPLAY - Member 4)
 ├── 📄 dashboard.html      (ANALYTICS DASHBOARD - Member 4)
-├── 📄 error.html          (ACCOUNT LOCKED PAGE - Member 2)
+├── 📄 locked.html          (ACCOUNT LOCKED PAGE - Member 2)
 └── 📄 README.md           (Project documentation - ALL MEMBERS)
 ```
 

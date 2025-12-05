@@ -1,33 +1,93 @@
- <section id="register" class="page-section">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Scented Luxe</title>
+</head>
+
+<body>
+
+    <main>
+        <section id="register" class="page-section">
             <div class="form-container">
-                <h2>Join Scented Luxe</h2>
+                <h1>Join Scented Luxe</h1>
+
                 <form id="registerForm">
-                    <div class="form-group">
-                        <label for="fullname">Full Name</label>
-                        <input type="text" id="fullname" name="fullname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dob">Date of Birth</label>
-                        <input type="date" id="dob" name="dob" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="newusername">Username</label>
-                        <input type="text" id="newusername" name="username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="newpassword">Password</label>
-                        <input type="password" id="newpassword" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmpassword">Confirm Password</label>
-                        <input type="password" id="confirmpassword" name="confirmPassword" required>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">Create Account</button>
+                    <fieldset>
+                        <legend>Personal Information</legend>
+
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dateofBirth">Date of Birth</label>
+                            <input type="date" id="dateofBirth" name="dateofBirth" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trn">TRN (Tax Registration Number)</label>
+                            <input type="text" id="trn" name="trn" maxlength="9" pattern="\d{9}" placeholder="Enter 9-digit TRN" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Account Information</legend>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newusername">Username</label>
+                            <input type="text" id="newusername" name="username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newpassword">Password</label>
+                            <input type="password" id="newpassword" name="password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmpassword">Confirm Password</label>
+                            <input type="password" id="confirmpassword" name="confirmPassword" required>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn" style="width: 100%;">Register</button>
+                    <button type="reset" class="btn" style="width: 100%;">Cancel</button>
+
                     <p style="text-align: center; margin-top: 1.5rem;">
-                        Already have an account? <a href="#login" onclick="showPage('login')" style="color: var(--rose-gold);">Login here</a>
+                        Already have an account? 
+                        <a href="index.html" style="color: var(--rose-gold);">Login here</a>
                     </p>
                 </form>
+
+            </div>
+        </section>
+    </main>
+<script src="../js/registrarion.js"></script>
+</body>
+</html>
