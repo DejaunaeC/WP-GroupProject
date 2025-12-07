@@ -137,5 +137,14 @@ document.addEventListener("DOMContentLoaded", renderInvoice);
 
 function returnHome() {
     window.location.href = 'products.html';
+
+	// Logout function
+function logout() {
+    if (confirm('Are you sure you want to logout?')) {
+        sessionStorage.clear();
+        window.location.href = 'index.html';
+    }
 }
+}
+
 
