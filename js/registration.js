@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "../products.html";
     });
 
-    // ✅ Cancel Button
+    // Cancel Button
     const cancelBtn = document.querySelector("button[type='reset']");
     if (cancelBtn) {
         cancelBtn.addEventListener("click", () => {
