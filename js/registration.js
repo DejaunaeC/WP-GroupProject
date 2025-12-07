@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("RegistrationData", JSON.stringify(registrationData));
 
         alert("Registration successful!");
-        window.location.href = "../products.html";
+        window.location.href = "products.html";
     });
 
     // Cancel Button
