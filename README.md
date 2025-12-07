@@ -8,7 +8,7 @@
 ## 👥 GROUP MEMBERS
 
 Dejaunae Clue- 2304199 - Product/Cart  
-Shania Foster - 2404262 -   Registration, Login, Locked, reset (JS, CSS, HTML) Group Member 2
+Shania Foster - 2404262 -   Registration, Login, Locked, reset (JS, CSS, HTML) Group Member 2.      
 Jadon Fearon - 2405548 - Login/Password
 Nathan-Neil Shelly - 2408989  Checkout/Invoice/Analytics
 
