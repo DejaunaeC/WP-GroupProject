@@ -1,3 +1,9 @@
+/* ============================================================================
+ * Member: Nathan-Neil Shelly - Member 3 (invoice, checkout and analytics)
+ * Student ID: 2408989
+ * Class: Friday/12PM
+ * ============================================================================
+*/
 // Storage key constant for accessing order history from localStorage
 const ANALYTICS_KEYS = {
 	orderHistory: "orderHistory"
@@ -85,3 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	renderAnalytics();
 	logAnalytics();
 });
+
+
+

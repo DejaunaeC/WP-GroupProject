@@ -1,3 +1,10 @@
+/* ============================================================================
+ * Member: Nathan-Neil Shelly - Member 3 (invoice, checkout and analytics)
+ * Student ID: 2408989
+ * Class: Friday/12PM
+ * ============================================================================
+*/
+
 // Storage key constants for managing cart and order data in localStorage
 const STORAGE_KEYS = {
 	cart: "cart",
@@ -184,3 +191,4 @@ document.addEventListener("DOMContentLoaded", () => {
 		form.addEventListener("submit", handleFormSubmit);
 	}
 });
+

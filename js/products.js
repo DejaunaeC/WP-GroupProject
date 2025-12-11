@@ -1,21 +1,4 @@
-/**
- * ============================================================================
- * MEMBER 3: PRODUCTS.JS - Product Catalog & Display
- * ============================================================================
- * Assignment: Group Project - E-Commerce Website
- * Member: [Your Name] - Member 3 (Products & Cart)
- * Student ID: [Your ID]
- * Class: Friday/12PM
- * 
- * This file handles:
- * - Product data storage
- * - Product display and grid rendering
- * - Product modal/details view
- * - Add to cart functionality from product page
- * ============================================================================
- */
 
-// ============================================================================
 // Question 3: Product Catalogue
 // 3a. Product List (Using Arrays & Objects)
 // ============================================================================
